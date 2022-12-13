@@ -39,30 +39,36 @@
 						<tbody>
 						@foreach ($cartItems as $item)
 							<tr>
-								<td class="image" data-title="No"><img src="https://via.placeholder.com/100x100" alt="#"></td>
+								<td class="image" data-title="No"><img src="{{ asset('uploads/produit/'.$item->attributes->picture) }}" alt="#"></td>
 								<td class="product-des" data-title="Description">
-									<p class="product-name"><a href="#">Women Dress</a></p>
+									<p class="product-name"><a href="#">{{ $item->nom }}</a></p>
 									<p class="product-des">Maboriosam in a tonto nesciung eget  distingy magndapibus.</p>
 								</td>
-								<td class="price" data-title="Price"><span>$1.000 </span></td>
+								<td class="price" data-title="Price"><span>${{ $item->prix }} </span></td>
 								<td class="qty" data-title="Qty"><!-- Input Order -->
-									<div class="input-group">
-										<div class="button minus">
-											<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-												<i class="ti-minus"></i>
-											</button>
-										</div>
-										<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="1">
-										<div class="button plus">
-											<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
-												<i class="ti-plus"></i>
-											</button>
-										</div>
-									</div>
+                                    <form action="{{ route('cart.update') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $item->id}}" >
+                                        <input type="number" id="qty-btn" name="quantity" value="{{ $item->quantity }}" 
+                                        class="w-6 text-center bg-gray-300" />
+                                        <button type="submit" id="update_btn" class="px-2 pb-2 ml-2 text-white bg-blue-500" style=" background-color: blue;border: none;height: 26px;">update</button>
+                                    </form>
 									<!--/ End Input Order -->
 								</td>
-								<td class="total-amount" data-title="Total"><span>$220.88</span></td>
-								<td class="action" data-title="Remove"><a href="#"><i class="ti-trash remove-icon"></i></a></td>
+								<td class="total-amount" data-title="Total"><span>$<?php
+								$A= $item->prix;
+								$B= $item->quantity;
+								$S= $A * $B;
+								ECHO "$S"
+
+								?></span></td>
+								<td class="action" data-title="Remove"> 
+                                    <form action="{{ route('cart.remove') }}" method="POST">
+										@csrf
+										<input type="hidden" value="{{ $item->id }}" name="id">
+										<button class="px-4 py-2 text-white bg-red-600" id="btn-edm" style="background-color: red !important;border: none;" >x</button>
+									</form>
+                                </td>
 							</tr>
                             @endforeach
 							  
@@ -95,7 +101,13 @@
 										<li>Cart Subtotal<span>$330.00</span></li>
 										<li>Shipping<span>Free</span></li>
 										<li>You Save<span>$20.00</span></li>
-										<li class="last">You Pay<span>$310.00</span></li>
+										<li class="last">You Pay<span>$<?php
+								$A= $item->prix;
+								$B= $item->quantity;
+								$S= $A * $B;
+								ECHO "$S"
+
+								?></span></li>
 									</ul>
 									<div class="button5">
 										<a href="#" class="btn">Checkout</a>

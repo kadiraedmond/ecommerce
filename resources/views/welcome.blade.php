@@ -169,7 +169,7 @@
 								<a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
 							</div>
 							<div class="sinlge-bar shopping">
-								<a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{Session::has('cart')?Session::get('cart')->totalQty:0}}</span></a>
+								<a href="{{ route('cart.list') }}" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{ Cart::getTotalQuantity()}}</span></a>
 								<!-- Shopping Item -->
 								<div class="shopping-item">
 									<div class="dropdown-cart-header">
@@ -433,7 +433,20 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="/ajouter_panier/{{$prod->id}}">Add to cart</a>
+																<form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #f7941d; border: none;">Add To Cart</button>
+																</form>
+																
 															</div>
 														</div>
 													</div>
