@@ -20,20 +20,17 @@ Route::get('/', [App\Http\Controllers\FrontController::class, 'index'])->name('w
 //     return view('welcome');
 // });
 
+
+Route::group(['middleware' => ['auth','admin']], function () {
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
 Route::get('produit', [ProduitController::class, 'index']);
 Route::get('add-produit', [ProduitController::class, 'create']);
 Route::post('add-produit', [ProduitController::class, 'store']);
 Route::get('edit-produit/{id}', [ProduitController::class, 'edit']);
 Route::put('update-produit/{id}', [ProduitController::class, 'update']);
 Route::delete('delete-produit/{id}', [ProduitController::class, 'destroy']);
-Route::resource('prods', 'ProdController');
-
-Route::get('blog', [BlogController::class, 'index']);
-Route::get('add-blog', [BlogController::class, 'create']);
-Route::post('add-blog', [BlogController::class, 'store']);
-Route::get('edit-blog/{id}', [BlogController::class, 'edit']);
-Route::put('update-blog/{id}', [BlogController::class, 'update']);
-Route::delete('delete-blog/{id}', [BlogController::class, 'destroy']);
 
 
 Route::get('promo', [PromoController::class, 'index']);
@@ -43,9 +40,23 @@ Route::get('edit-promo/{id}', [PromoController::class, 'edit']);
 Route::put('update-promo/{id}', [PromoController::class, 'update']);
 Route::delete('delete-promo/{id}', [PromoController::class, 'destroy']);
 
+
+Route::get('blog', [BlogController::class, 'index']);
+Route::get('add-blog', [BlogController::class, 'create']);
+Route::post('add-blog', [BlogController::class, 'store']);
+Route::get('edit-blog/{id}', [BlogController::class, 'edit']);
+Route::put('update-blog/{id}', [BlogController::class, 'update']);
+Route::delete('delete-blog/{id}', [BlogController::class, 'destroy']);
+
+
+
+});
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::resource('prods', 'ProdController');
+
 Route::get('/detail/{id}', 'FrontController@detail' );
 Route::get('/search', [App\Http\Controllers\FrontController::class, 'search']);
 Route::get('/ajouter_panier/{id}', 'FrontController@cart' );
