@@ -143,8 +143,9 @@
 																<option>mobile</option>
 																<option>kid’s item</option>
 															</select> -->
-															<form>
-																<input name="search" placeholder="Search Products Here....." type="search">
+															<form class="form-a" action="/search" method="GET" role="search">
+                                                                {{ csrf_field() }}
+																<input name="q" placeholder="Search Products Here....." type="text">
 																<button class="btnn"><i class="ti-search"></i></button>
 															</form>
 														</div>
@@ -444,7 +445,7 @@
 																	<input type="hidden" value="{{ $prod->images }}"  name="images">
 																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
 																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #f7941d; border: none;">Add To Cart</button>
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
 																</form>
 																
 															</div>
@@ -554,11 +555,12 @@
                 <div class="col-12">
                     <div class="owl-carousel popular-slider">
 						<!-- Start Single Product -->
+						@foreach($produit as $prod)
 						<div class="single-product">
 							<div class="product-img">
-								<a href="product-details.html">
-									<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-									<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+								<a href="/detail/{{$prod-> id}}">
+									<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+									<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
 									<span class="out-of-stock">Hot</span>
 								</a>
 								<div class="button-head">
@@ -573,92 +575,14 @@
 								</div>
 							</div>
 							<div class="product-content">
-								<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
+								<h3><a href="/detail/{{$prod-> id}}">Black Sunglass For Women</a></h3>
 								<div class="product-price">
 									<span class="old">$60.00</span>
 									<span>$50.00</span>
 								</div>
 							</div>
 						</div>
-						<!-- End Single Product -->
-						<!-- Start Single Product -->
-						<div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                                    <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-                                </a>
-								<div class="button-head">
-									<div class="product-action">
-										<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-										<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
-									</div>
-									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
-									</div>
-								</div>
-                            </div>
-                            <div class="product-content">
-                                <h3><a href="product-details.html">Women Hot Collection</a></h3>
-                                <div class="product-price">
-                                    <span>$50.00</span>
-                                </div>
-                            </div>
-                        </div>
-						<!-- End Single Product -->
-						<!-- Start Single Product -->
-						<div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                                    <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-									<span class="new">New</span>
-                                </a>
-								<div class="button-head">
-									<div class="product-action">
-										<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-										<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
-									</div>
-									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
-									</div>
-								</div>
-                            </div>
-                            <div class="product-content">
-                                <h3><a href="product-details.html">Awesome Pink Show</a></h3>
-                                <div class="product-price">
-                                    <span>$50.00</span>
-                                </div>
-                            </div>
-                        </div>
-						<!-- End Single Product -->
-						<!-- Start Single Product -->
-						<div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                                    <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-                                </a>
-								<div class="button-head">
-									<div class="product-action">
-										<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-										<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
-									</div>
-									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
-									</div>
-								</div>
-                            </div>
-                            <div class="product-content">
-                                <h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-                                <div class="product-price">
-                                    <span>$50.00</span>
-                                </div>
-                            </div>
-                        </div>
+						@endforeach
 						<!-- End Single Product -->
                     </div>
                 </div>
@@ -905,42 +829,20 @@
 				</div>
 			</div>
 			<div class="row">
+				@foreach($blog as $prod)
 				<div class="col-lg-4 col-md-6 col-12">
 					<!-- Start Single Blog  -->
 					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
+						<img src="{{ asset('uploads/blog/'.$prod->picture) }}" alt="#">
 						<div class="content">
 							<p class="date">22 July , 2020. Monday</p>
-							<a href="#" class="title">Sed adipiscing ornare.</a>
+							<a href="#" class="title"> {{$prod->titre}}</a>
 							<a href="#" class="more-btn">Continue Reading</a>
 						</div>
 					</div>
 					<!-- End Single Blog  -->
 				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Man’s Fashion Winter Sale</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Women Fashion Festive</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</section>

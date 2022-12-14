@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\File;
 
 class ProduitController extends Controller
 {
+
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -96,11 +106,11 @@ class ProduitController extends Controller
     public function update(Request $request, $id)
     {
         $produit = Produit::find($id);
-        $produit->nom = $request->input('name');
-        $produit->prix = $request->input('email');
-        $produit->description = $request->input('course');
-        $produit->categorie = $request->input('course');
-        $produit->info = $request->input('course');
+        $produit->nom = $request->input('nom');
+        $produit->prix = $request->input('prix');
+        $produit->description = $request->input('description');
+        $produit->categorie = $request->input('categorie');
+        $produit->info = $request->input('info');
 
         if($request->hasfile('picture'))
         {
@@ -113,7 +123,7 @@ class ProduitController extends Controller
             $extention = $file->getClientOriginalName();
             $filename = time().'.'.$extention;
             $file->move('uploads/produit/', $filename);
-            $produit->profile_image = $filename;
+            $produit->picture = $filename;
         }
         if($request->hasfile('images'))
         {

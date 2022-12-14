@@ -26,17 +26,17 @@
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner bg-light">
                         <div class="carousel-item active">
-                            <img class="w-100 h-100" src="img/product-1.jpg" alt="Image">
+                            <img class="w-100 h-100" src="{{ asset('uploads/produit/'.$produit->picture) }}" alt="Image">
                         </div>
                         <div class="carousel-item">
-                            <img class="w-100 h-100" src="img/product-2.jpg" alt="Image">
+                            <img class="w-100 h-100" src="{{ asset('uploads/produit/'.$produit->images) }}" alt="Image">
                         </div>
-                        <div class="carousel-item">
+                        <!-- <div class="carousel-item">
                             <img class="w-100 h-100" src="img/product-3.jpg" alt="Image">
                         </div>
                         <div class="carousel-item">
                             <img class="w-100 h-100" src="img/product-4.jpg" alt="Image">
-                        </div>
+                        </div> -->
                     </div>
                     <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
                         <i class="fa fa-2x fa-angle-left text-dark"></i>
@@ -106,8 +106,21 @@
                         </form>
                     </div>
                     <div class="d-flex align-items-center mb-4 pt-2" style="margin-left: 24px;">
-                        <button class="btn btn-primary px-3" style="border:none !important;"><i class="fa fa-shopping-cart mr-1" ></i> Add To
+                    <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+							@csrf
+							<input type="hidden" value="{{ $produit->id }}" name="id">
+							<input type="hidden" value="{{ $produit->nom }}" name="nom">
+							<input type="hidden" value="{{ $produit->prix }}" name="prix">
+							<input type="hidden" value="{{ $produit->categorie }}" name="categorie">
+							<input type="hidden" value="{{ $produit->description }}" name="description">
+							<input type="hidden" value="{{ $produit->info }}" name="info">
+							<input type="hidden" value="{{ $produit->images }}"  name="images">
+							<input type="hidden" value="{{ $produit->picture }}"  name="picture">
+							<input type="hidden" value="1" name="quantity">
+							<button class="btn btn-primary px-3" style="border:none !important;"><i class="fa fa-shopping-cart mr-1" ></i> Add To
                             Cart</button>
+					</form>                    
+
                     </div>
                     <div class="d-flex pt-2"style="margin-left: 24px; margin-bottom: 20px;
                     padding-top: 20px;">
@@ -241,28 +254,55 @@
     </div>
     <!-- Shop Detail End -->
 	
-	<!-- Start Shop Newsletter  -->
-	<section class="shop-newsletter section">
-		<div class="container">
-			<div class="inner-top">
-				<div class="row">
-					<div class="col-lg-8 offset-lg-2 col-12">
-						<!-- Start Newsletter Inner -->
-						<div class="inner">
-							<h4>Newsletter</h4>
-							<p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
-							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-								<input name="EMAIL" placeholder="Your email address" required="" type="email">
-								<button class="btn">Subscribe</button>
-							</form>
-						</div>
-						<!-- End Newsletter Inner -->
+	<!-- Start Most Popular -->
+	<div class="product-area most-popular section">
+        <div class="container">
+            <div class="row">
+				<div class="col-12">
+					<div class="section-title">
+						<h2>Produit similaire</h2>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Shop Newsletter -->
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel popular-slider">
+						<!-- Start Single Product -->
+						@foreach($similaire as $prod)
+						<div class="single-product">
+							<div class="product-img">
+								<a href="/detail/{{$prod-> id}}">
+									<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+									<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
+									<span class="out-of-stock">Hot</span>
+								</a>
+								<div class="button-head">
+									<div class="product-action">
+										<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+										<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+									</div>
+									<div class="product-action-2">
+										<a title="Add to cart" href="#">Add to cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="product-content">
+								<h3><a href="/detail/{{$prod-> id}}">Black Sunglass For Women</a></h3>
+								<div class="product-price">
+									<span class="old">$60.00</span>
+									<span>$50.00</span>
+								</div>
+							</div>
+						</div>
+						@endforeach
+						<!-- End Single Product -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- End Most Popular Area -->
 	
 	
 	

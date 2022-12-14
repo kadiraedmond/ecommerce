@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Produit;
+use App\Models\Blog;
 use App\Cart;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -17,13 +18,14 @@ class FrontController extends Controller
     public function index()
     {
         $produit = Produit::latest()->get();
+        $blog = Blog::latest()->take(3)->get();
         $telephone = DB::table('produits')->where('categorie', 'telephone')->take(8)->get();
         $ordinateur = DB::table('produits')->where('categorie', 'ordinateur')->take(8)->get();
         $accessoire = DB::table('produits')->where('categorie', 'accessoire')->take(8)->get();
 
         $imprimante = DB::table('produits')->where('categorie', 'imprimante')->take(8)->get();
 
-         return view('welcome',compact('produit','telephone','ordinateur','imprimante','accessoire'));
+         return view('welcome',compact('produit','telephone','ordinateur','imprimante','accessoire', 'blog'));
     }
 
     /**
@@ -96,8 +98,9 @@ class FrontController extends Controller
     {
         if(Produit::where('id', '$id'))
         {
+           $similaire = Produit::latest()->get();
            $produit = Produit::where('id', $id)->first();
-           return view('produit.detail',compact('produit'));
+           return view('produit.detail',compact('produit','similaire'));
         }
     }
 
@@ -131,8 +134,8 @@ class FrontController extends Controller
     {
         $key = trim($request->get('q'));
 
-        $produit = Produit::where('type', 'like', "%{$key}%")
-            ->orWhere('title', 'like', "%{$key}%")
+        $produit = Produit::where('categorie', 'like', "%{$key}%")
+            ->orWhere('nom', 'like', "%{$key}%")
             ->orWhere('prix', 'like', "%{$key}%")
             // ->orderBy('created_at', 'desc')
             ->get();
