@@ -29,8 +29,8 @@
 						<thead>
 							<tr class="main-hading">
 								<th>PRODUCT</th>
-								<th>NAME</th>
-								<th class="text-center">UNIT PRICE</th>
+								<th>NOM</th>
+								<th class="text-center">PRIX UNITAIRE</th>
 								<th class="text-center">QUANTITY</th>
 								<th class="text-center">TOTAL</th> 
 								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
@@ -49,7 +49,7 @@
                                     <form action="{{ route('cart.update') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $item->id}}" >
-                                        <input type="number" id="qty-btn" name="quantity" value="{{ $item->quantity }}" 
+                                        <input type="number" id="qty-btn" name="quantity" value="{{ $item->quantity }}" style="max-width: 87px;border: none;"
                                         class="w-6 text-center bg-gray-300" />
                                         <button type="submit" id="update_btn" class="px-2 pb-2 ml-2 text-white bg-blue-500" style=" background-color: blue;border: none;height: 26px;">update</button>
                                     </form>

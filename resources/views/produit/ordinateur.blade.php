@@ -9,8 +9,9 @@
 					<div class="col-12">
 						<div class="bread-inner">
 							<ul class="bread-list">
-								<li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-								<li class="active"><a href="blog-single.html">Shop Grid</a></li>
+							    <li><a href="/">Home<i class="ti-arrow-right"></i></a></li>
+								<li><a href="/">Boutique<i class="ti-arrow-right"></i></a></li>
+								<li class="active"><a href="#">Ordinateur</a></li>
 							</ul>
 						</div>
 					</div>
@@ -175,25 +176,37 @@
 							<div class="col-lg-4 col-md-6 col-12">
 								<div class="single-product">
 									<div class="product-img">
-										<a href="product-details.html">
-											<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-											<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+										<a href="{{ url('/detail/'.$prod->id) }}">
+											<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+											<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
 										</a>
 										<div class="button-head">
 											<div class="product-action">
 												<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
 												<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-												<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+												<!-- <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a> -->
 											</div>
 											<div class="product-action-2">
-												<a title="Add to cart" href="#">Add to cart</a>
+											   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+													@csrf
+													<input type="hidden" value="{{ $prod->id }}" name="id">
+													<input type="hidden" value="{{ $prod->nom }}" name="nom">
+													<input type="hidden" value="{{ $prod->prix }}" name="prix">
+													<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+													<input type="hidden" value="{{ $prod->description }}" name="description">
+												    <input type="hidden" value="{{ $prod->info }}" name="info">
+													<input type="hidden" value="{{ $prod->images }}"  name="images">
+													<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+													<input type="hidden" value="1" name="quantity">
+													<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+												</form>
 											</div>
 										</div>
 									</div>
 									<div class="product-content">
-										<h3><a href="product-details.html">Women Hot Collection</a></h3>
+										<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 										<div class="product-price">
-											<span>$29.00</span>
+											<span>${{ $prod->prix }}</span>
 										</div>
 									</div>
 								</div>

@@ -8,9 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Title Tag  -->
-    <title>Eshop - eCommerce HTML5 Template.</title>
+    <title>Aurabais - eCommerce</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="icon" type="image/png" href="{{ asset('front/images/favicon.jpeg') }}">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	
@@ -80,9 +80,35 @@
 						<div class="right-content">
 							<ul class="list-main">
 								<li><i class="ti-location-pin"></i> Localisation </li>
-								<!-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
-								<li><i class="ti-user"></i> <a href="#">My account</a></li> -->
-								<li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+								<!-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li> -->
+								@guest
+                                   @if (Route::has('login'))
+								    <li><i class="ti-power-off"></i><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+								  @endif
+
+								  @if (Route::has('register'))
+								    <li><i class="ti-user"></i> <a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+								  @endif
+
+								@else
+									<li class="nav-item dropdown">
+										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+											{{ Auth::user()->name }}
+										</a>
+
+										<div class="dropdown-menu dropdown-menu-end show" aria-labelledby="navbarDropdown" id="dro">
+											<a class="dropdown-item" href="{{ route('logout') }}"
+											onclick="event.preventDefault();
+															document.getElementById('logout-form').submit();">
+												{{ __('Logout') }}
+											</a>
+
+											<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+												@csrf
+											</form>
+										</div>
+									</li>
+							@endguest
 							</ul>
 						</div>
 						<!-- End Top Right -->
@@ -97,7 +123,7 @@
 					<div class="col-lg-2 col-md-1 col-12">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.html"><img src="" alt="logo"></a>
+							<a href="/"><img src="{{ asset('front/images/logo.jpeg') }}" alt="logo" style="margin-top: -12px;margin-left: -37px;" id="aurabais"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form -->
@@ -124,16 +150,16 @@
 									<div class="nav-inner">	
 										<ul class="nav main-menu menu navbar-nav">
 												<li class="active"><a href="#">Home</a></li>
-												<li><a href="#" style="color:black !important;">Boutique<i class="ti-angle-down"></i><span class="new">New</span></a>
-													<ul class="dropdown">
-														<li><a href="shop-grid.html"style="color:black !important;">Téléphones</a></li>
-														<li><a href="cart.html"style="color:black !important;">Ordinateurs</a></li>
-														<li><a href="checkout.html"style="color:black !important;">Imprimantes</a></li>
-														<li><a href="checkout.html"style="color:black !important;">Accessoires</a></li>
+												<li><a href="#" style="color:black !important;">Catégorie<i class="ti-angle-down"></i><span class="new">New</span></a>
+												<ul class="dropdown">
+														<li><a href="{{ url('/Boutique/Telephone') }}"style="color:black !important;">Téléphones</a></li>
+														<li><a href="{{ url('/Boutique/Ordinateur') }}"style="color:black !important;">Ordinateurs</a></li>
+														<li><a href="{{ url('/Boutique/Imprimante') }}"style="color:black !important;">Imprimantes</a></li>
+														<li><a href="{{ url('/Boutique/Accessoire') }}"style="color:black !important;">Accessoires</a></li>
 													</ul>
 												</li>
-												<li><a href="#"style="color:black !important;">Blog</a></li>									
-												<li><a href="contact.html"style="color:black !important;">Contact</a></li>
+												<li><a href="{{ url('/Blog') }}"style="color:black !important;">Blog</a></li>									
+												<li><a href="{{ url('/Contact') }}"style="color:black !important;">Contact</a></li>
 												<li> 
 													<div class="search-bar-top">
 														<div class="search-bar">
@@ -351,7 +377,7 @@
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
+														<a href="{{ url('/detail/'.$prod->id) }}">
 															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
 															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
 														</a>
@@ -359,17 +385,29 @@
 															<div class="product-action">
 																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
 																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+																<!-- <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a> -->
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Women Hot Collection</a></h3>
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>{{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -387,7 +425,7 @@
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
+														<a href="{{ url('/detail/'.$prod->id) }}">
 															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
 															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
 														</a>
@@ -398,14 +436,26 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Women Hot Collection</a></h3>
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>${{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -431,7 +481,7 @@
 															<div class="product-action">
 																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
 																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+																<!-- <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a> -->
 															</div>
 															<div class="product-action-2">
 																<form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
@@ -452,9 +502,9 @@
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="/detail/{{$prod-> id}}">Women Hot Collection</a></h3>
+														<h3><a href="/detail/{{$prod-> id}}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>${{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -483,14 +533,26 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="/ajouter_panier/{{$prod->id}}">Add to cart</a>
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="{{ url('/detail/'.$prod->id) }}">Women Hot Collection</a></h3>
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>${{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -567,18 +629,30 @@
 									<div class="product-action">
 										<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
 										<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+										<!-- <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a> -->
 									</div>
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+									  <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+										    @csrf
+											<input type="hidden" value="{{ $prod->id }}" name="id">
+											<input type="hidden" value="{{ $prod->nom }}" name="nom">
+									     	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+											<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+											<input type="hidden" value="{{ $prod->description }}" name="description">
+											<input type="hidden" value="{{ $prod->info }}" name="info">
+											<input type="hidden" value="{{ $prod->images }}"  name="images">
+											<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+											<input type="hidden" value="1" name="quantity">
+											<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+									  </form>
 									</div>
 								</div>
 							</div>
 							<div class="product-content">
-								<h3><a href="/detail/{{$prod-> id}}">Black Sunglass For Women</a></h3>
+								<h3><a href="/detail/{{$prod-> id}}">{{ $prod->nom }}</a></h3>
 								<div class="product-price">
 									<span class="old">$60.00</span>
-									<span>$50.00</span>
+									<span>${{ $prod->prix }}</span>
 								</div>
 							</div>
 						</div>

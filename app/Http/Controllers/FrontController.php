@@ -130,6 +130,19 @@ class FrontController extends Controller
        
     }
 
+
+    public function contact()
+    {
+
+         return view('contact');
+    }
+
+    public function blog()
+    {
+
+         return view('blog');
+    }
+
     public function search(Request $request)
     {
         $key = trim($request->get('q'));
@@ -146,6 +159,8 @@ class FrontController extends Controller
              
         ]);
     }
+
+
 
 
 

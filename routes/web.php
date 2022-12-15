@@ -67,6 +67,8 @@ Route::get('/Boutique/Telephone', 'FrontController@telephone');
 Route::get('/Boutique/Ordinateur', 'FrontController@ordinateur');
 Route::get('/Boutique/Imprimante', 'FrontController@imprimante');
 Route::get('/Boutique/Accessoire', 'FrontController@accessoire');
+Route::get('/Contact', 'FrontController@contact');
+Route::get('/Blog', 'FrontController@blog');
 
 
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');

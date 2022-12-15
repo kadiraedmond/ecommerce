@@ -8,9 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Title Tag  -->
-    <title>Eshop - eCommerce HTML5 Template.</title>
+    <title>Aurabais - eCommerce</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="icon" type="image/png" href="{{ asset('front/images/favicon.jpeg') }}">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	
@@ -80,9 +80,35 @@
 						<div class="right-content">
 							<ul class="list-main">
 								<li><i class="ti-location-pin"></i> Localisation </li>
-								<!-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
-								<li><i class="ti-user"></i> <a href="#">My account</a></li> -->
-								<li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+								<!-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li> -->
+								@guest
+                                   @if (Route::has('login'))
+								    <li><i class="ti-power-off"></i><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+								  @endif
+
+								  @if (Route::has('register'))
+								    <li><i class="ti-user"></i> <a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+								  @endif
+
+								@else
+									<li class="nav-item dropdown">
+										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+											{{ Auth::user()->name }}
+										</a>
+
+										<div class="dropdown-menu dropdown-menu-end show" aria-labelledby="navbarDropdown" id="dro">
+											<a class="dropdown-item" href="{{ route('logout') }}"
+											onclick="event.preventDefault();
+															document.getElementById('logout-form').submit();">
+												{{ __('Logout') }}
+											</a>
+
+											<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+												@csrf
+											</form>
+										</div>
+									</li>
+							@endguest
 							</ul>
 						</div>
 						<!-- End Top Right -->
@@ -97,7 +123,7 @@
 					<div class="col-lg-2 col-md-1 col-12">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.html"><img src="" alt="logo"></a>
+							<a href="/"><img src="{{ asset('front/images/logo.jpeg') }}" alt="logo" style="margin-top: -12px;margin-left: -37px;" id="aurabais"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form -->
@@ -123,17 +149,17 @@
 								<div class="navbar-collapse">	
 									<div class="nav-inner">	
 										<ul class="nav main-menu menu navbar-nav">
-												<li class="active"><a href="#">Home</a></li>
-												<li><a href="#" style="color:black !important;">Boutique<i class="ti-angle-down"></i><span class="new">New</span></a>
+												<li><a href="/" style="color:black !important;">Home</a></li>
+												<li class="active"><a href="#" style="color:white !important;">Catégorie<i class="ti-angle-down"></i><span class="new">New</span></a>
 													<ul class="dropdown">
-														<li><a href="shop-grid.html"style="color:black !important;">Téléphones</a></li>
-														<li><a href="cart.html"style="color:black !important;">Ordinateurs</a></li>
-														<li><a href="checkout.html"style="color:black !important;">Imprimantes</a></li>
-														<li><a href="checkout.html"style="color:black !important;">Accessoires</a></li>
+														<li><a href="{{ url('/Boutique/Telephone') }}"style="color:black !important;">Téléphones</a></li>
+														<li><a href="{{ url('/Boutique/Ordinateur') }}"style="color:black !important;">Ordinateurs</a></li>
+														<li><a href="{{ url('/Boutique/Imprimante') }}"style="color:black !important;">Imprimantes</a></li>
+														<li><a href="{{ url('/Boutique/Accessoire') }}"style="color:black !important;">Accessoires</a></li>
 													</ul>
 												</li>
-												<li><a href="#"style="color:black !important;">Blog</a></li>									
-												<li><a href="contact.html"style="color:black !important;">Contact</a></li>
+												<li><a href="{{ url('/Blog') }}"style="color:black !important;">Blog</a></li>									
+												<li><a href="{{ url('/Contact') }}"style="color:black !important;">Contact</a></li>
 												<li> 
 													<div class="search-bar-top">
 														<div class="search-bar">
@@ -143,8 +169,9 @@
 																<option>mobile</option>
 																<option>kid’s item</option>
 															</select> -->
-															<form>
-																<input name="search" placeholder="Search Products Here....." type="search">
+															<form class="form-a" action="/search" method="GET" role="search">
+                                                                {{ csrf_field() }}
+																<input name="q" placeholder="Search Products Here....." type="text">
 																<button class="btnn"><i class="ti-search"></i></button>
 															</form>
 														</div>
@@ -169,11 +196,11 @@
 								<a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
 							</div>
 							<div class="sinlge-bar shopping">
-								<a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
+								<a href="{{ route('cart.list') }}" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{ Cart::getTotalQuantity()}}</span></a>
 								<!-- Shopping Item -->
 								<div class="shopping-item">
 									<div class="dropdown-cart-header">
-										<span>2 Items</span>
+										<span> </span>
 										<a href="#">View Cart</a>
 									</div>
 									<ul class="shopping-list">
