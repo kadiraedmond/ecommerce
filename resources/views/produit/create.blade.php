@@ -26,14 +26,13 @@
                             <input type="text" name="nom" class="form-control">
                         </div>
                         <div class="form-group mt-3">
-                            <label for="cases">Catégorie :</label>
+                            <label for="cases">Categorie:</label>
 
                             <select class="form-select" size="text" aria-label="size text select example" name="categorie">
                                 <option selected></option>
-                                <option value="telephone">Telephone</option>
-                                <option value="ordinateur">Ordinateur</option>
-                                <option value="imprimante">Imprimante</option>
-                                <option value="accessoire">Accessoire</option>
+                                @foreach($categorie as $item)
+                                <option value="{{$item->nom}}">{{$item->nom}}</option>
+                                @endforeach 
                                 
 
                             </select>

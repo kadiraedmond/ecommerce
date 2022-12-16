@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
@@ -56,6 +57,13 @@ Auth::routes();
 
 
 Route::resource('prods', 'ProdController');
+
+Route::get('categorie', [CategorieController::class, 'index']);
+Route::get('add-categorie', [CategorieController::class, 'create']);
+Route::post('add-categorie', [CategorieController::class, 'store']);
+Route::get('edit-categorie/{id}', [CategorieController::class, 'edit']);
+Route::put('update-categorie/{id}', [CategorieController::class, 'update']);
+Route::delete('delete-categorie/{id}', [CategorieController::class, 'destroy']);
 
 Route::get('/detail/{id}', 'FrontController@detail' );
 Route::get('/search', [App\Http\Controllers\FrontController::class, 'search']);

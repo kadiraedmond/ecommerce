@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produit;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -36,7 +37,8 @@ class ProduitController extends Controller
      */
     public function create()
     {
-        return view('produit.create');
+        $categorie = Categorie::all();
+        return view('produit.create', compact('categorie'));
     }
 
     /**

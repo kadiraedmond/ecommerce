@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Laravel 8 IMAGE CRUD
-                        <a href="{{ url('add-promo') }}" class="btn btn-primary float-end">Add promo</a>
+                        <a href="{{ url('add-categorie') }}" class="btn btn-primary float-end">Add categorie</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -17,34 +17,23 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Titre du promo</th>
-                                <th>type</th>
-                                <th>info</th>
-                                <th>Prix</th>
-                                <th>Prix Promotionnelle</th>
-                                <th>Images</th>
+                                <th>Nom du categorie</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($promo as $item)
+                            @foreach ($categorie as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->titre }}</td>
-                                <td>{{ $item->type }}</td>
-                                <td>{{ $item->info }}</td>
-                                <td>{{ $item->prix }}</td>
-                                <td>{{ $item->prixpromo }}</td>
+                                <td>{{ $item->nom }}</td>
+                    
                                 <td>
-                                    <img src="{{ asset('uploads/promo/'.$item->picture) }}" width="70px" height="70px" alt="Image">
+                                    <a href="{{ url('edit-categorie/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                 </td>
                                 <td>
-                                    <a href="{{ url('edit-promo/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                </td>
-                                <td>
-                                    {{-- <a href="{{ url('delete-promo/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a> --}}
-                                    <form action="{{ url('delete-promo/'.$item->id) }}" method="POST">
+                                    {{-- <a href="{{ url('delete-categorie/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a> --}}
+                                    <form action="{{ url('delete-categorie/'.$item->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>

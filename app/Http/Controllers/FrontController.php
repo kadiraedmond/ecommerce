@@ -125,7 +125,7 @@ class FrontController extends Controller
         $cart = new Cart($oldCart);
 
         return view('panier', ['produit'=> $cart->items] );
-        return view('panier');
+        return view('panier'); 
          
        
     }
