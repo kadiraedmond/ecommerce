@@ -69,8 +69,8 @@
 						<!-- Top Left -->
 						<div class="top-left">
 							<ul class="list-main">
-								<li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-								<li><i class="ti-email"></i> support@shophub.com</li>
+								<li><i class="ti-headphone-alt"></i> +228 70 65 17 05</li>
+								<li><i class="ti-email"></i> support@au-rabais.com</li>
 							</ul>
 						</div>
 						<!--/ End Top Left -->
@@ -79,7 +79,7 @@
 						<!-- Top Right -->
 						<div class="right-content">
 							<ul class="list-main">
-								<li><i class="ti-location-pin"></i> Localisation </li>
+								<li><i class="ti-location-pin"></i> Lomè-Adidogomé </li>
 								<!-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li> -->
 								@guest
                                    @if (Route::has('login'))
@@ -158,7 +158,7 @@
 														<li><a href="{{ url('/Boutique/Accessoire') }}"style="color:black !important;">Accessoires</a></li>
 													</ul>
 												</li>
-												<li><a href="{{ url('/Blog') }}"style="color:black !important;">Blog</a></li>									
+												<li><a href="{{ url('/Blog') }}"style="color:black !important;">Boutique</a></li>									
 												<li><a href="{{ url('/Contact') }}"style="color:black !important;">Contact</a></li>
 												<li> 
 													<div class="search-bar-top">
@@ -286,20 +286,20 @@
 								<a href="index.html"><img src="images/logo2.png" alt="#"></a>
 							</div>
 							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-							<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+							<p class="call">Vous avez une question ? Appelez-nous 24h/24 et 7j/7<span><a href="tel:+22870651705">+228 70 65 17 05</a></span></p>
 						</div>
 						<!-- End Single Widget -->
 					</div>
 					<div class="col-lg-2 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer links">
-							<h4>Information</h4>
+							<h4>Informations</h4>
 							<ul>
-								<li><a href="#">About Us</a></li>
+								<li><a href="#">Apropos</a></li>
 								<li><a href="#">Faq</a></li>
 								<li><a href="#">Terms & Conditions</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Help</a></li>
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Aide</a></li>
 							</ul>
 						</div>
 						<!-- End Single Widget -->
@@ -307,13 +307,13 @@
 					<div class="col-lg-2 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer links">
-							<h4>Customer Service</h4>
+							<h4>Service Clients</h4>
 							<ul>
-								<li><a href="#">Payment Methods</a></li>
-								<li><a href="#">Money-back</a></li>
-								<li><a href="#">Returns</a></li>
-								<li><a href="#">Shipping</a></li>
-								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">méthodes de payement</a></li>
+								<li><a href="#">Remboursement</a></li>
+								<li><a href="#">Retour</a></li>
+								<li><a href="#">Expédition</a></li>
+								<li><a href="#">Politique de confidentialité</a></li>
 							</ul>
 						</div>
 						<!-- End Single Widget -->
@@ -321,22 +321,22 @@
 					<div class="col-lg-3 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer social">
-							<h4>Get In Tuch</h4>
+							<h4>Entrez en contact</h4>
 							<!-- Single Widget -->
 							<div class="contact">
 								<ul>
-									<li>NO. 342 - London Oxford Street.</li>
-									<li>012 United Kingdom.</li>
-									<li>info@eshop.com</li>
-									<li>+032 3456 7890</li>
+									<li>Afrique-Togo</li>
+									<li>Lomè-Adidogomé.</li>
+									<li>support@aurabais.com</li>
+									<li>+228 70 65 17 05</li>
 								</ul>
 							</div>
 							<!-- End Single Widget -->
 							<ul>
-								<li><a href="#"><i class="ti-facebook"></i></a></li>
-								<li><a href="#"><i class="ti-twitter"></i></a></li>
-								<li><a href="#"><i class="ti-flickr"></i></a></li>
-								<li><a href="#"><i class="ti-instagram"></i></a></li>
+								<li><a href="https://www.facebook.com/Au-Rabais-113151708051033/?modal=focused_switcher_dialog"><i class="ti-facebook"></i></a></li>
+								<li><a href="https://www.linkedin.com/company/91591391"><i class="ti-linkedin"></i></a></li>
+								<li><a href="https://www.youtube.com/channel/UCAgFAORsHn4CPLerGm6iYhg"><i class="ti-youtube"></i></a></li>
+								<li><a href="https://www.instagram.com/aurabais22/"><i class="ti-instagram"></i></a></li>
 							</ul>
 						</div>
 						<!-- End Single Widget -->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Produit;
+use App\Models\Promo;
 use App\Models\Blog;
 use App\Cart;
 use Illuminate\Support\Facades\DB;
@@ -24,8 +25,9 @@ class FrontController extends Controller
         $accessoire = DB::table('produits')->where('categorie', 'accessoire')->take(8)->get();
 
         $imprimante = DB::table('produits')->where('categorie', 'imprimante')->take(8)->get();
+        $slider = DB::table('promos')->where('type', 'section1')->take(1)->get();
 
-         return view('welcome',compact('produit','telephone','ordinateur','imprimante','accessoire', 'blog'));
+         return view('welcome',compact('produit','telephone','ordinateur','imprimante','accessoire', 'blog', 'slider'));
     }
 
     /**
