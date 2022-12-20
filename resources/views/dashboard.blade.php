@@ -11,9 +11,9 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-1">
                             <div class="card-body">
-                                <h3 class="card-title text-white">Products Sold</h3>
+                                <h3 class="card-title text-white">Totale Produits</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
+                                    <h2 class="text-white">{{$prods}}</h2>
                                     <p class="text-white mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
@@ -23,9 +23,9 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-2">
                             <div class="card-body">
-                                <h3 class="card-title text-white">Net Profit</h3>
+                                <h3 class="card-title text-white">Prix Totale</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">$ 8541</h2>
+                                    <h2 class="text-white">FCFA{{$prix}}</h2>
                                     <p class="text-white mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
@@ -35,9 +35,9 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-3">
                             <div class="card-body">
-                                <h3 class="card-title text-white">New Customers</h3>
+                                <h3 class="card-title text-white">Totale Categorie</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
+                                    <h2 class="text-white">{{$categorie}}</h2>
                                     <p class="text-white mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
@@ -233,11 +233,11 @@
                                         <table class="table table-xs mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Customers</th>
-                                                    <th>Product</th>
-                                                    <th>Country</th>
+                                                    <th>Utilisateur</th>
+                                                    <th>Produit</th>
+                                                    <th>ville</th>
                                                     <th>Status</th>
-                                                    <th>Payment Method</th>
+                                                    <th>methode de payement</th>
                                                     <th>Activity</th>
                                                 </tr>
                                             </thead>

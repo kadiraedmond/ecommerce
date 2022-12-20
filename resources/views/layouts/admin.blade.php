@@ -274,6 +274,7 @@
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Creation</span>
                         </a>
                         <ul aria-expanded="false">
+                            <li><a href="{{ url('add-categorie') }}">Categorie</a></li>
                             <li><a href="{{ url('add-produit') }}">Produit</a></li>
                             <li><a href="{{ url('add-blog') }}">Blog</a></li>
                             <li><a href="{{ url('add-promo') }}">Promotion</a></li>
@@ -302,9 +303,10 @@
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Affichage</span>
+                            <i class="icon-graph menu-icon"></i > <span class="nav-text">Affichage</span>
                         </a>
                         <ul aria-expanded="false">
+                        <li><a href="{{ url('categorie') }}">Categorie</a></li>
                             <li><a href="{{ url('produit') }}">Produit</a></li>
                             <li><a href="{{ url('blog') }}">Blog</a></li>
                             <li><a href="{{ url('promo') }}">Promotion</a></li>
