@@ -49,7 +49,7 @@
                     <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
                     <span class="logo-compact"><img src="{{asset('admin/images/logo-compact.png')}}" alt=""></span>
                     <span class="brand-title">
-                        <img src="" alt="Logo">
+                        <img src="" alt="Dashbord Aurabais">
                     </span>
                 </a>
             </div>
@@ -361,7 +361,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="#">Quixlab</a> 2018</p>
+                <p>Copyright &copy; Designed & Developed by <a href="#">it-innovation</a> 2022</p>
             </div>
         </div>
         <!--**********************************

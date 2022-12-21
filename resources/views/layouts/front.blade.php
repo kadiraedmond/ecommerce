@@ -152,13 +152,14 @@
 												<li><a href="/" style="color:black !important;">Home</a></li>
 												<li class="active"><a href="#" style="color:white !important;">Catégorie<i class="ti-angle-down"></i><span class="new">New</span></a>
 													<ul class="dropdown">
-														<li><a href="{{ url('/Boutique/Telephone') }}"style="color:black !important;">Téléphones</a></li>
-														<li><a href="{{ url('/Boutique/Ordinateur') }}"style="color:black !important;">Ordinateurs</a></li>
-														<li><a href="{{ url('/Boutique/Imprimante') }}"style="color:black !important;">Imprimantes</a></li>
-														<li><a href="{{ url('/Boutique/Accessoire') }}"style="color:black !important;">Accessoires</a></li>
+													<li><a href="{{ url('/info&tech') }}"style="color:black !important;">Informations & Téchnologies</a></li>
+													  <li><a href="{{ url('/Produit-cosmetique') }}"style="color:black !important;">Produit cosméttiques</a></li>
+													  <li><a href="{{ url('/Sport-Divertissement') }}"style="color:black !important;">Sport & Divertissement</a></li>
+													  <li><a href="{{ url('/Hygiene-Santé') }}"style="color:black !important;">Hygiéne & santé</a></li>
+													  <li><a href="{{ url('/Autres') }}"style="color:black !important;">Autres</a></li>
 													</ul>
 												</li>
-												<li><a href="{{ url('/Blog') }}"style="color:black !important;">Boutique</a></li>									
+												<li><a href="{{ url('/Boutique') }}"style="color:black !important;">Boutique</a></li>									
 												<li><a href="{{ url('/Contact') }}"style="color:black !important;">Contact</a></li>
 												<li> 
 													<div class="search-bar-top">

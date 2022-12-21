@@ -70,17 +70,20 @@ Route::get('add-letter', [LetterController::class, 'create']);
 Route::post('add-letter', [LetterController::class, 'store']);
 
 Route::get('/detail/{id}', 'FrontController@detail' );
+Route::get('/Categorie/{categorie}', 'FrontController@type' );
 Route::get('/search', [App\Http\Controllers\FrontController::class, 'search']);
 Route::get('/ajouter_panier/{id}', 'FrontController@cart' );
 Route::get('/panier', 'FrontController@panier' );
-
-
-Route::get('/Boutique/Telephone', 'FrontController@telephone');
-Route::get('/Boutique/Ordinateur', 'FrontController@ordinateur');
-Route::get('/Boutique/Imprimante', 'FrontController@imprimante');
-Route::get('/Boutique/Accessoire', 'FrontController@accessoire');
 Route::get('/Contact', 'FrontController@contact');
 Route::get('/Blog', 'FrontController@blog');
+Route::get('/Boutique', 'FrontController@boutique');
+
+
+Route::get('/info&tech', 'FrontController@info' );
+Route::get('/Produit-cosmetique', 'FrontController@prod_cosmetique');
+Route::get('/Sport-Divertissement', 'FrontController@sport_div');
+Route::get('/Hygiene-Santé', 'FrontController@hygiene');
+Route::get('/Autres', 'FrontController@autres');
 
 
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');

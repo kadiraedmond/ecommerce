@@ -12,7 +12,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4>Edit Student with IMAGE
+                    <h4>Edit Product with IMAGE
                         <a href="{{ url('produit') }}" class="btn btn-danger float-end">BACK</a>
                     </h4>
                 </div>

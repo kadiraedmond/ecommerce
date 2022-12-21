@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Laravel 8 IMAGE CRUD
+                    <h4>Ajouter produit
                         <a href="{{ url('add-produit') }}" class="btn btn-primary float-end">Add Produit</a>
                     </h4>
                 </div>

@@ -152,13 +152,18 @@
 												<li class="active"><a href="#">Home</a></li>
 												<li><a href="#" style="color:black !important;">Catégorie<i class="ti-angle-down"></i><span class="new">New</span></a>
 												<ul class="dropdown">
-														<li><a href="{{ url('/Boutique/Telephone') }}"style="color:black !important;">Téléphones</a></li>
-														<li><a href="{{ url('/Boutique/Ordinateur') }}"style="color:black !important;">Ordinateurs</a></li>
-														<li><a href="{{ url('/Boutique/Imprimante') }}"style="color:black !important;">Imprimantes</a></li>
-														<li><a href="{{ url('/Boutique/Accessoire') }}"style="color:black !important;">Accessoires</a></li>
+													 
+													  <li><a href="{{ url('/info&tech') }}"style="color:black !important;">Informations & Téchnologies</a></li>
+													  <li><a href="{{ url('/Produit-cosmetique') }}"style="color:black !important;">Produit cosméttiques</a></li>
+													  <li><a href="{{ url('/Sport-Divertissement') }}"style="color:black !important;">Sport & Divertissement</a></li>
+													  <li><a href="{{ url('/Hygiene-Santé') }}"style="color:black !important;">Hygiéne & santé</a></li>
+													  <li><a href="{{ url('/Autres') }}"style="color:black !important;">Autres</a></li>
+			                                       
+														 
+											
 													</ul>
 												</li>
-												<li><a href="{{ url('/Blog') }}"style="color:black !important;">Boutique</a></li>									
+												<li><a href="{{ url('/Boutique') }}"style="color:black !important;">Boutique</a></li>									
 												<li><a href="{{ url('/Contact') }}"style="color:black !important;">Contact</a></li>
 												<li> 
 													<div class="search-bar-top">
@@ -232,41 +237,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Header Inner -->
-		<!-- <div class="header-inner">
-			<div class="container">
-				<div class="cat-nav-head">
-					<div class="row">
-						<div class="col-lg-9 col-12">
-							<div class="menu-area"> -->
-								<!-- Main Menu -->
-								<!-- <nav class="navbar navbar-expand-lg">
-									<div class="navbar-collapse">	
-										<div class="nav-inner">	
-											<ul class="nav main-menu menu navbar-nav">
-													<li class="active"><a href="#">Home</a></li>
-													<li><a href="#">Boutique<i class="ti-angle-down"></i><span class="new">New</span></a>
-														<ul class="dropdown">
-															<li><a href="shop-grid.html">Téléphones</a></li>
-															<li><a href="cart.html">Ordinateurs</a></li>
-															<li><a href="checkout.html">Imprimantes</a></li>
-															<li><a href="checkout.html">Accessoires</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Blog</a></li>									
-													<li><a href="contact.html">Contact</a></li>
-												</ul>
-										</div>
-									</div>
-								</nav> -->
-								<!--/ End Main Menu -->	
-							<!-- </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!--/ End Header Inner -->
+		 
 	</header>
 	<!--/ End Header -->
 	
@@ -313,9 +284,9 @@
 					<div class="single-banner">
 						<img src="https://via.placeholder.com/600x370" alt="#">
 						<div class="content">
-							<p>Man's Collectons</p>
-							<h3>Summer travel <br> collection</h3>
-							<a href="#">Discover Now</a>
+							<p>Collections Technologique</p>
+							<h3>Informatique <br> collection</h3>
+							<a href="{{ url('/info&tech') }}">voir plus</a>
 						</div>
 					</div>
 				</div>
@@ -325,9 +296,9 @@
 					<div class="single-banner">
 						<img src="https://via.placeholder.com/600x370" alt="#">
 						<div class="content">
-							<p>Bag Collectons</p>
-							<h3>Awesome Bag <br> 2020</h3>
-							<a href="#">Shop Now</a>
+							<p>Collections Cosmetiques</p>
+							<h3>Collections <br> 2022</h3>
+							<a href="{{ url('/Produit-cosmetique') }}">Voir plus</a>
 						</div>
 					</div>
 				</div>
@@ -337,9 +308,9 @@
 					<div class="single-banner tab-height">
 						<img src="https://via.placeholder.com/600x370" alt="#">
 						<div class="content">
-							<p>Flash Sale</p>
-							<h3>Mid Season <br> Up to <span>40%</span> Off</h3>
-							<a href="#">Discover Now</a>
+							<p>Collection Sportive</p>
+							<h3>Haute Game<br> Up to <span>40%</span> Off</h3>
+							<a href="{{ url('/Sport-Divertissement') }}">Voir plus</a>
 						</div>
 					</div>
 				</div>
@@ -524,7 +495,7 @@
 								<div class="tab-pane fade" id="accessories" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($accessoire as $prod)
+											@foreach($accessoires as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -572,7 +543,7 @@
 								<div class="tab-pane fade" id="logiciel" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($accessoire as $prod)
+											@foreach($logiciel as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -630,7 +601,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="section-title">
-							<h2>Mode</h2>
+							<h2>Produit Cosmetique</h2>
 						</div>
 					</div>
 				</div>
@@ -644,8 +615,8 @@
 									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Femme</a></li>
 									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Enfant</a></li>
 									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Bébé</a></li>
-									<!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Essential</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Prices</a></li> -->
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Parfun" role="tab">Parfun</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#beaute" role="tab">Beauté</a></li>
 								</ul>
 								<!--/ End Tab Nav -->
 							</div>
@@ -654,7 +625,7 @@
 								<div class="tab-pane fade show active" id="man" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($ordinateur as $prod)
+											@foreach($homme as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -702,7 +673,7 @@
 								<div class="tab-pane fade" id="women" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($telephone as $prod)
+											@foreach($femme as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -750,7 +721,7 @@
 								<div class="tab-pane fade" id="kids" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($imprimante as $prod)
+											@foreach($enfant as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -799,7 +770,103 @@
 								<div class="tab-pane fade" id="accessories" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($accessoire as $prod)
+											@foreach($accessoires as $prod)
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{{ url('/detail/'.$prod->id) }}">
+															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
+														<div class="product-price">
+															<span>${{ $prod->prix }}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										@endforeach
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<div class="tab-pane fade" id="parfun" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											@foreach($parfun as $prod)
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{{ url('/detail/'.$prod->id) }}">
+															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
+														<div class="product-price">
+															<span>${{ $prod->prix }}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										@endforeach
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<div class="tab-pane fade" id="beaute" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											@foreach($beauté as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -849,7 +916,7 @@
 				</div>
             </div>
     </div>
-	<!-- End Product Area -->
+	<!-- End Product Mode Area -->
 
 	<!-- Start Product Area -->
     <div class="product-area section">
@@ -857,7 +924,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="section-title">
-							<h2>Meubles & Décorations</h2>
+							<h2>Sport & Divertissements</h2>
 						</div>
 					</div>
 				</div>
@@ -867,21 +934,19 @@
 							<div class="nav-main">
 								<!-- Tab Nav -->
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
-									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Ordinateurs</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Téléphones</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Imprimantes</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Accessoires</a></li>
-									<!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Essential</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Prices</a></li> -->
+									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#jeux" role="tab">Jeux</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#jouet" role="tab">Jouet</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bricolages" role="tab">Bricolages</a></li>
+									 
 								</ul>
 								<!--/ End Tab Nav -->
 							</div>
 							<div class="tab-content" id="myTabContent">
 								<!-- Start Single Tab -->
-								<div class="tab-pane fade show active" id="man" role="tabpanel">
+								<div class="tab-pane fade show active" id="jeux" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($ordinateur as $prod)
+											@foreach($jeux as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -926,10 +991,10 @@
 								</div>
 								<!--/ End Single Tab -->
 								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="women" role="tabpanel">
+								<div class="tab-pane fade" id="jouet" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($telephone as $prod)
+											@foreach($jouet as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -974,10 +1039,10 @@
 								</div>
 								<!--/ End Single Tab -->
 								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="kids" role="tabpanel">
+								<div class="tab-pane fade" id="bricoloages" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($imprimante as $prod)
+											@foreach($bricolages as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -1022,54 +1087,7 @@
 									</div>
 								</div>
 								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="accessories" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($accessoire as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="{{ url('/detail/'.$prod->id) }}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
-															</div>
-															<div class="product-action-2">
-															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										@endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
+								 
 							</div>
 						</div>
 					</div>
@@ -1111,460 +1129,6 @@
 	</section>
 	<!-- End Midium Banner -->
 
-	<!-- Start Product Area -->
-    <div class="product-area section">
-            <div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="section-title">
-							<h2>Alimentation & Boisson</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="product-info">
-							<div class="nav-main">
-								<!-- Tab Nav -->
-								<ul class="nav nav-tabs" id="myTab" role="tablist">
-									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Ordinateurs</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Téléphones</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Imprimantes</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Accessoires</a></li>
-									<!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Essential</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Prices</a></li> -->
-								</ul>
-								<!--/ End Tab Nav -->
-							</div>
-							<div class="tab-content" id="myTabContent">
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade show active" id="man" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($ordinateur as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="{{ url('/detail/'.$prod->id) }}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<!-- <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a> -->
-															</div>
-															<div class="product-action-2">
-															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>{{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											 @endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="women" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($telephone as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="{{ url('/detail/'.$prod->id) }}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
-															</div>
-															<div class="product-action-2">
-															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											 @endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="kids" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($imprimante as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="/detail/{{$prod-> id}}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<!-- <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a> -->
-															</div>
-															<div class="product-action-2">
-																<form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-																
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="/detail/{{$prod-> id}}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										 @endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="accessories" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($accessoire as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="{{ url('/detail/'.$prod->id) }}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
-															</div>
-															<div class="product-action-2">
-															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										@endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-							</div>
-						</div>
-					</div>
-				</div>
-            </div>
-    </div>
-	<!-- End Product Area -->
-
-	<!-- Start Product jeux et jouet Area -->
-    <div class="product-area section">
-            <div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="section-title">
-							<h2>Jeux & Jouets</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="product-info">
-							<div class="nav-main">
-								<!-- Tab Nav -->
-								<ul class="nav nav-tabs" id="myTab" role="tablist">
-									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#bricolage" role="tab">Ordinateurs</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Téléphones</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Imprimantes</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Accessoires</a></li>
-									<!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Essential</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Prices</a></li> -->
-								</ul>
-								<!--/ End Tab Nav -->
-							</div>
-							<div class="tab-content" id="myTabContent">
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade show active" id="man" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($ordinateur as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="{{ url('/detail/'.$prod->id) }}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<!-- <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a> -->
-															</div>
-															<div class="product-action-2">
-															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>{{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											 @endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="women" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($telephone as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="{{ url('/detail/'.$prod->id) }}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
-															</div>
-															<div class="product-action-2">
-															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											 @endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="kids" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($imprimante as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="/detail/{{$prod-> id}}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<!-- <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a> -->
-															</div>
-															<div class="product-action-2">
-																<form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-																
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="/detail/{{$prod-> id}}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										 @endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="accessories" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											@foreach($accessoire as $prod)
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="{{ url('/detail/'.$prod->id) }}">
-															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
-															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
-															</div>
-															<div class="product-action-2">
-															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-																	@csrf
-																	<input type="hidden" value="{{ $prod->id }}" name="id">
-																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
-																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
-																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
-																	<input type="hidden" value="{{ $prod->description }}" name="description">
-																	<input type="hidden" value="{{ $prod->info }}" name="info">
-																	<input type="hidden" value="{{ $prod->images }}"  name="images">
-																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
-																	<input type="hidden" value="1" name="quantity">
-																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
-																</form>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
-														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										@endforeach
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-							</div>
-						</div>
-					</div>
-				</div>
-            </div>
-    </div>
-	<!-- End Product jeux et jouet Area -->
-
 	<!-- Start Product autres Area -->
     <div class="product-area section">
             <div class="container">
@@ -1583,19 +1147,22 @@
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
 									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#cadeaux" role="tab">Cadeaux</a></li>
 									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#artisanat" role="tab">Artisanat</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bricolages" role="tab">Bricolages</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Accessoires</a></li>
-									<!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Essential</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Prices</a></li> -->
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessores" role="tab">Accessoires</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#animal" role="tab">Animalerie</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#lumiere" role="tab">luminaire</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#agriculture" role="tab">Agriculture</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#fourniture" role="tab">Fourniture de bureax</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#meuble" role="tab">Meubles</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#decoration" role="tab">Decoration</a></li>
 								</ul>
 								<!--/ End Tab Nav -->
 							</div>
 							<div class="tab-content" id="myTabContent">
 								<!-- Start Single Tab -->
-								<div class="tab-pane fade show active" id="man" role="tabpanel">
+								<div class="tab-pane fade show active" id="artisanat" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($ordinateur as $prod)
+											@foreach($artisanat as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -1640,10 +1207,10 @@
 								</div>
 								<!--/ End Single Tab -->
 								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="women" role="tabpanel">
+								<div class="tab-pane fade" id="accessoires" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($telephone as $prod)
+											@foreach($accessoires as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -1688,10 +1255,10 @@
 								</div>
 								<!--/ End Single Tab -->
 								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="kids" role="tabpanel">
+								<div class="tab-pane fade" id="animal" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($imprimante as $prod)
+											@foreach($animalerie as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -1737,10 +1304,202 @@
 								</div>
 								<!--/ End Single Tab -->
 								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="accessories" role="tabpanel">
+								<div class="tab-pane fade" id="lumiere" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
-											@foreach($accessoire as $prod)
+											@foreach($luminaire as $prod)
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{{ url('/detail/'.$prod->id) }}">
+															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
+														<div class="product-price">
+															<span>${{ $prod->prix }}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										@endforeach
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<div class="tab-pane fade" id="agriculture" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											@foreach($agriculture as $prod)
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{{ url('/detail/'.$prod->id) }}">
+															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
+														<div class="product-price">
+															<span>${{ $prod->prix }}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										@endforeach
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<div class="tab-pane fade" id="fourniture" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											@foreach($bureaux as $prod)
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{{ url('/detail/'.$prod->id) }}">
+															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
+														<div class="product-price">
+															<span>${{ $prod->prix }}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										@endforeach
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<div class="tab-pane fade" id="meuble" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											@foreach($meuble as $prod)
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{{ url('/detail/'.$prod->id) }}">
+															<img class="default-img" src="{{ asset('uploads/produit/'.$prod->picture) }}" alt="#">
+															<img class="hover-img" src="{{ asset('uploads/produit/'.$prod->images) }}" alt="#">
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+															   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+																	@csrf
+																	<input type="hidden" value="{{ $prod->id }}" name="id">
+																	<input type="hidden" value="{{ $prod->nom }}" name="nom">
+																	<input type="hidden" value="{{ $prod->prix }}" name="prix">
+																	<input type="hidden" value="{{ $prod->categorie }}" name="categorie">
+																	<input type="hidden" value="{{ $prod->description }}" name="description">
+																	<input type="hidden" value="{{ $prod->info }}" name="info">
+																	<input type="hidden" value="{{ $prod->images }}"  name="images">
+																	<input type="hidden" value="{{ $prod->picture }}"  name="picture">
+																	<input type="hidden" value="1" name="quantity">
+																	<button class="px-4 py-2 text-white bg-blue-800 rounded" style="background-color: #eb5b27; border: none;">Add To Cart</button>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
+														<div class="product-price">
+															<span>${{ $prod->prix }}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										@endforeach
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<div class="tab-pane fade" id="decoration" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											@foreach($decoration as $prod)
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -1798,7 +1557,7 @@
             <div class="row">
 				<div class="col-12">
 					<div class="section-title">
-						<h2>Haute Game</h2>
+						<h2>Hygiene & santé</h2>
 					</div>
 				</div>
             </div>
