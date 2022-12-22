@@ -50,6 +50,13 @@ Route::get('edit-blog/{id}', [BlogController::class, 'edit']);
 Route::put('update-blog/{id}', [BlogController::class, 'update']);
 Route::delete('delete-blog/{id}', [BlogController::class, 'destroy']);
 
+Route::get('categorie', [CategorieController::class, 'index']);
+Route::get('add-categorie', [CategorieController::class, 'create']);
+Route::post('add-categorie', [CategorieController::class, 'store']);
+Route::get('edit-categorie/{id}', [CategorieController::class, 'edit']);
+Route::put('update-categorie/{id}', [CategorieController::class, 'update']);
+Route::delete('delete-categorie/{id}', [CategorieController::class, 'destroy']);
+
 
 
 });
@@ -58,13 +65,6 @@ Auth::routes();
 
 
 Route::resource('prods', 'ProdController');
-
-Route::get('categorie', [CategorieController::class, 'index']);
-Route::get('add-categorie', [CategorieController::class, 'create']);
-Route::post('add-categorie', [CategorieController::class, 'store']);
-Route::get('edit-categorie/{id}', [CategorieController::class, 'edit']);
-Route::put('update-categorie/{id}', [CategorieController::class, 'update']);
-Route::delete('delete-categorie/{id}', [CategorieController::class, 'destroy']);
 
 Route::get('add-letter', [LetterController::class, 'create']);
 Route::post('add-letter', [LetterController::class, 'store']);

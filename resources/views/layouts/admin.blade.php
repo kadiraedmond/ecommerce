@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>AuRabais - Admin Dashboard </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/images/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/images/favicon.jpeg')}}">
     <!-- Pignose Calender -->
     <link href="{{ asset('admin/plugins/pg-calendar/css/pignose.calendar.min.css')}}" rel="stylesheet">
     <!-- Chartist -->
@@ -265,7 +265,7 @@
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Home 1</a></li>
+                            <li><a href="{{url('/home')}}">Home</a></li>
                             <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                         </ul>
                     </li>
@@ -279,6 +279,19 @@
                             <li><a href="{{ url('add-blog') }}">Blog</a></li>
                             <li><a href="{{ url('add-promo') }}">Promotion</a></li>
             
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-graph menu-icon"></i > <span class="nav-text">Affichage</span>
+                        </a>
+                        <ul aria-expanded="false">
+                        <li><a href="{{ url('categorie') }}">Categorie</a></li>
+                            <li><a href="{{ url('produit') }}">Produit</a></li>
+                            <li><a href="{{ url('blog') }}">Blog</a></li>
+                            <li><a href="{{ url('promo') }}">Promotion</a></li>
+                            <li><a href="{{ url('user') }}">user connecter</a></li>
+    
                         </ul>
                     </li>
                     <li class="nav-label">Apps</li>
@@ -297,21 +310,8 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Apps</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./app-profile.html">Profile</a></li>
-                            <li><a href="./app-calender.html">Calender</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-graph menu-icon"></i > <span class="nav-text">Affichage</span>
-                        </a>
-                        <ul aria-expanded="false">
-                        <li><a href="{{ url('categorie') }}">Categorie</a></li>
-                            <li><a href="{{ url('produit') }}">Produit</a></li>
-                            <li><a href="{{ url('blog') }}">Blog</a></li>
-                            <li><a href="{{ url('promo') }}">Promotion</a></li>
-                            <li><a href="{{ url('user') }}">user connecter</a></li>
-    
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Calender</a></li>
                         </ul>
                     </li>
                      
@@ -322,9 +322,9 @@
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./page-login.html">Login</a></li>
-                            <li><a href="./page-register.html">Register</a></li>
-                            <li><a href="./page-lock.html">Lock Screen</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Lock Screen</a></li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
                                 <ul aria-expanded="false">
                                     <li><a href="./page-error-404.html">Error 404</a></li>

@@ -44,18 +44,18 @@
 									<p class="product-name"><a href="#">{{ $item->nom }}</a></p>
 									<p class="product-des">Maboriosam in a tonto nesciung eget  distingy magndapibus.</p>
 								</td>
-								<td class="price" data-title="Price"><span>${{ $item->prix }} </span></td>
+								<td class="price" data-title="Price"><span>Fcfa {{ $item->prix }} </span></td>
 								<td class="qty" data-title="Qty"><!-- Input Order -->
                                     <form action="{{ route('cart.update') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $item->id}}" >
                                         <input type="number" id="qty-btn" name="quantity" value="{{ $item->quantity }}" style="max-width: 87px;border: none;"
                                         class="w-6 text-center bg-gray-300" />
-                                        <button type="submit" id="update_btn" class="px-2 pb-2 ml-2 text-white bg-blue-500" style=" background-color: blue;border: none;height: 26px;">update</button>
+                                        <button type="submit" id="update_btn" class="px-2 pb-2 ml-2 text-white bg-blue-500" style=" background-color: blue;border: none;height: 26px;">Modifier</button>
                                     </form>
 									<!--/ End Input Order -->
 								</td>
-								<td class="total-amount" data-title="Total"><span>$<?php
+								<td class="total-amount" data-title="Total"><span>Fcfa<?php
 								$A= $item->prix;
 								$B= $item->quantity;
 								$S= $A * $B;
@@ -83,7 +83,7 @@
 					<div class="total-amount">
 						<div class="row">
 							<div class="col-lg-8 col-md-5 col-12">
-								<div class="left">
+								<!-- <div class="left">
 									<div class="coupon">
 										<form action="#" target="_blank">
 											<input name="Coupon" placeholder="Enter Your Coupon">
@@ -93,15 +93,15 @@
 									<div class="checkbox">
 										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Shipping (+10$)</label>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<div class="col-lg-4 col-md-7 col-12">
 								<div class="right">
 									<ul>
-										<li>Cart Subtotal<span>$330.00</span></li>
+										<!-- <li>Cart Subtotal<span>$330.00</span></li>
 										<li>Shipping<span>Free</span></li>
-										<li>You Save<span>$20.00</span></li>
-										<li class="last">You Pay<span>$<?php
+										<li>You Save<span>$20.00</span></li> -->
+										<li class="last">Totale <span>Fcfa<?php
 								$A= $item->prix;
 								$B= $item->quantity;
 								$S= $A * $B;
@@ -111,7 +111,7 @@
 									</ul>
 									<div class="button5">
 										<a href="#" class="btn">Checkout</a>
-										<a href="#" class="btn">Continue shopping</a>
+										<a href="{{url('/')}}" class="btn">Continue shopping</a>
 									</div>
 								</div>
 							</div>
@@ -176,14 +176,14 @@
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2 col-12">
 						<!-- Start Newsletter Inner -->
-						<div class="inner">
+						<!-- <div class="inner">
 							<h4>Newsletter</h4>
 							<p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
 							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
 								<input name="EMAIL" placeholder="Your email address" required="" type="email">
 								<button class="btn">Subscribe</button>
 							</form>
-						</div>
+						</div> -->
 						<!-- End Newsletter Inner -->
 					</div>
 				</div>

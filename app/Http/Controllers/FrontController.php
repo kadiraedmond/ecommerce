@@ -42,14 +42,19 @@ class FrontController extends Controller
         $meuble = DB::table('produits')->where('categorie', 'Meuble')->take(8)->get();
         $decoration = DB::table('produits')->where('categorie', 'Décoration')->take(8)->get();
         $logiciel = DB::table('produits')->where('categorie', 'Logiciel')->take(8)->get();
+        $hygiene = DB::table('produits')->where('categorie', 'hygiene')->take(8)->get();
 
         $imprimante = DB::table('produits')->where('categorie', 'imprimante')->take(8)->get();
+        $best = DB::table('produits')->where('prix', 100000)->take(8)->get();
+        $view = Produit::latest()->take(3)->get();
+        $ancien = Produit::latest()->take(3)->get();
         $slider = DB::table('promos')->where('type', 'section1')->take(1)->get();
+
 
          return view('welcome',compact('produit','telephone','ordinateur','imprimante',
           'blog', 'slider','categorie','homme','femme','enfant','parfun','jeux','jouet',
           'bricolages','cadeaux','artisanat', 'animalerie','luminaire','agriculture',
-          'bureaux','beauté','accessoires','logiciel','meuble','decoration'));
+          'bureaux','beauté','accessoires','logiciel','meuble','decoration','hygiene','best','view','ancien'));
     }
 
     /**
