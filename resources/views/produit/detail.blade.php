@@ -182,35 +182,75 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h4 class="mb-4">Leave a review</h4>
-                                    <small>Your email address will not be published. Required fields are marked *</small>
-                                    <div class="d-flex my-3">
-                                        <p class="mb-0 mr-2">Your Rating * :</p>
-                                        <div class="text-primary">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
+                                    <h4 class="mb-4">Contact</h4>
+                                    <div class="row">
+                                    <div class="property-agent">
+                  <h4 class="title-agent"></h4>
+                  <p class="color-text-a">
+                    Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+                    dui. Quisque velit nisi,
+                    pretium ut lacinia in, elementum id enim.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="d-flex justify-content-between" style="margin-right: 38px;">
+                      <strong>Phone:</strong>
+                      <span class="color-text-a">+228 70 65 17 05</span>
+                    </li>
+                    <li class="d-flex justify-content-between" style="margin-right: 38px;">
+                      <strong>Mobile:</strong>
+                      <span class="color-text-a">+228 70 65 17 05</span>
+                    </li>
+                    <li class="d-flex justify-content-between" style="margin-right: 38px;">
+                      <strong>Email:</strong>
+                      <span class="color-text-a">support@aurabais.com</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>whatsapp:</strong>
+                      <span class="color-text-a"> 
+                        
+                        <a href="https://api.whatsapp.com/send?phone=22870392801&text=salut je suis intéressé Par {{$produit->nom}} et d'identifiant {{$produit->id}}">
+                        <img src="{{asset ('front/images/whsap.png') }}" alt="" style="width:61px !important;margin-right: 40px;">
+                        </a>
+                        <!-- + 228 70392801 -->
+                      </span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Telegram:</strong>
+                      <span class="color-text-a"> 
+                        <a href="https://t.me/edmoka&text=salut je suis intéressé Par {{$produit->nom}} et d'identifiant {{$produit->id}}"">
+                        <img src="{{asset ('front/images/telegram.png') }}" alt="" style="width:88px !important;margin-right: 26px;">
+                        </a>
+                        <!-- + 228 97356136 -->
+                      </span>
+                    </li>
+                  </ul>
+                  <div class="socials-a">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="bi bi-facebook" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="bi bi-twitter" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="bi bi-instagram" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">
+                          <i class="bi bi-linkedin" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                                     </div>
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="message">Your Review *</label>
-                                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="name">Your Name *</label>
-                                            <input type="text" class="form-control" id="name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Your Email *</label>
-                                            <input type="email" class="form-control" id="email">
-                                        </div>
-                                        <div class="form-group mb-0">
-                                            <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
-                                        </div>
-                                    </form>
+                                     
                                 </div>
                             </div>
                         </div>

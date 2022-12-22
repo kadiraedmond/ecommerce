@@ -150,7 +150,7 @@
 									<div class="nav-inner">	
 										<ul class="nav main-menu menu navbar-nav">
 												<li><a href="/" style="color:black !important;">Home</a></li>
-												<li class="active"><a href="#" style="color:white !important;">Catégorie<i class="ti-angle-down"></i><span class="new">New</span></a>
+												<li class="active"><a href="#" style="color:white !important;">Catégorie<i class="ti-angle-down"></i><span class="new"></span></a>
 													<ul class="dropdown">
 													<li><a href="{{ url('/info&tech') }}"style="color:black !important;">Informations & Téchnologies</a></li>
 													  <li><a href="{{ url('/Produit-cosmetique') }}"style="color:black !important;">Produit cosméttiques</a></li>
@@ -199,7 +199,7 @@
 							<div class="sinlge-bar shopping">
 								<a href="{{ route('cart.list') }}" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{ Cart::getTotalQuantity()}}</span></a>
 								<!-- Shopping Item -->
-								<div class="shopping-item">
+								<!-- <div class="shopping-item">
 									<div class="dropdown-cart-header">
 										<span> </span>
 										<a href="#">View Cart</a>
@@ -225,7 +225,7 @@
 										</div>
 										<a href="checkout.html" class="btn animate">Checkout</a>
 									</div>
-								</div>
+								</div> -->
 								<!--/ End Shopping Item -->
 							</div>
 						</div>
