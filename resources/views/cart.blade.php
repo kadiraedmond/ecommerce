@@ -44,7 +44,7 @@
 									<p class="product-name"><a href="#">{{ $item->nom }}</a></p>
 									<p class="product-des">Maboriosam in a tonto nesciung eget  distingy magndapibus.</p>
 								</td>
-								<td class="price" data-title="Price"><span>Fcfa {{ $item->prix }} </span></td>
+								<td class="price" data-title="Price"><span>CFA {{ $item->prix }} </span></td>
 								<td class="qty" data-title="Qty"><!-- Input Order -->
                                     <form action="{{ route('cart.update') }}" method="POST">
                                         @csrf
@@ -55,7 +55,7 @@
                                     </form>
 									<!--/ End Input Order -->
 								</td>
-								<td class="total-amount" data-title="Total"><span>Fcfa<?php
+								<td class="total-amount" data-title="Total"><span>CFA<?php
 								$A= $item->prix;
 								$B= $item->quantity;
 								$S= $A * $B;
@@ -101,16 +101,16 @@
 										<!-- <li>Cart Subtotal<span>$330.00</span></li>
 										<li>Shipping<span>Free</span></li>
 										<li>You Save<span>$20.00</span></li> -->
-										<li class="last">Totale <span>Fcfa<?php
-								// $A= $item->prix;
-								// $B= $item->quantity;
-								// $S= $A * $B;
-								// ECHO "$S"
+										<li class="last">Totale <span>CFA<?php
+								$A= $item->prix;
+								$B= $item->quantity;
+								$S= $A * $B;
+								ECHO "$S"
 
 								?></span></li>
 									</ul>
 									<div class="button5">
-										<a href="#" class="btn">Checkout</a>
+										<a href="{{url('/checkout')}}" class="btn">Checkout</a>
 										<a href="{{url('/')}}" class="btn">Continue shopping</a>
 									</div>
 								</div>

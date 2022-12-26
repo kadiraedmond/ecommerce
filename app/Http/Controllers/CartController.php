@@ -8,6 +8,10 @@ class CartController extends Controller
 {
     public function cartList()
     {
+        if( $cartItems = \Cart::getTotalQuantity()== 0){
+
+            return redirect()->back()->with('status','Le panier est vide');
+        }
         $cartItems = \Cart::getContent();
         // dd($cartItems);
         return view('cart', compact('cartItems'));
@@ -56,7 +60,7 @@ class CartController extends Controller
         \Cart::remove($request->id);
         session()->flash('success', 'Item Cart Remove Successfully !');
 
-        return redirect()->route('cart.list');
+        return redirect()->route('welcome');
     }
 
     public function clearAllCart()
@@ -66,5 +70,10 @@ class CartController extends Controller
         session()->flash('success', 'All Item Cart Clear Successfully !');
 
         return redirect()->route('cart.list');
+    }
+
+    public function checkout()
+    {
+        return view('checkout');
     }
 }
