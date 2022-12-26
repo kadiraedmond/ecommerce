@@ -102,10 +102,10 @@
 										<li>Shipping<span>Free</span></li>
 										<li>You Save<span>$20.00</span></li> -->
 										<li class="last">Totale <span>Fcfa<?php
-								$A= $item->prix;
-								$B= $item->quantity;
-								$S= $A * $B;
-								ECHO "$S"
+								// $A= $item->prix;
+								// $B= $item->quantity;
+								// $S= $A * $B;
+								// ECHO "$S"
 
 								?></span></li>
 									</ul>
