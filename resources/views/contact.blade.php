@@ -26,44 +26,44 @@
 						<div class="col-lg-8 col-12">
 							<div class="form-main">
 								<div class="title">
-									<h4>Get in touch</h4>
-									<h3>Write us a message</h3>
+									<h4>Entrer en contact</h4>
+									<h3>Écrivez-nous un message</h3>
 								</div>
 								<form class="form" method="post" action="mail/mail.php">
 									<div class="row">
 										<div class="col-lg-6 col-12">
 											<div class="form-group">
-												<label>Your Name<span>*</span></label>
+												<label>Votre nom<span>*</span></label>
 												<input name="name" type="text" placeholder="">
 											</div>
 										</div>
 										<div class="col-lg-6 col-12">
 											<div class="form-group">
-												<label>Your Subjects<span>*</span></label>
+												<label>Vos sujets<span>*</span></label>
 												<input name="subject" type="text" placeholder="">
 											</div>
 										</div>
 										<div class="col-lg-6 col-12">
 											<div class="form-group">
-												<label>Your Email<span>*</span></label>
+												<label>Votre e-mail<span>*</span></label>
 												<input name="email" type="email" placeholder="">
 											</div>	
 										</div>
 										<div class="col-lg-6 col-12">
 											<div class="form-group">
-												<label>Your Phone<span>*</span></label>
+												<label>Ton numero téléphone<span>*</span></label>
 												<input name="company_name" type="text" placeholder="">
 											</div>	
 										</div>
 										<div class="col-12">
 											<div class="form-group message">
-												<label>your message<span>*</span></label>
+												<label> Message<span>*</span></label>
 												<textarea name="message" placeholder=""></textarea>
 											</div>
 										</div>
 										<div class="col-12">
 											<div class="form-group button">
-												<button type="submit" class="btn ">Send Message</button>
+												<button type="submit" class="btn ">Envoyer le message</button>
 											</div>
 										</div>
 									</div>
@@ -74,7 +74,7 @@
 							<div class="single-head">
 								<div class="single-info">
 									<i class="fa fa-phone"></i>
-									<h4 class="title">Call us Now:</h4>
+									<h4 class="title">Appelez-nous maintenant:</h4>
 									<ul>
 										<li>+228 70 65 17 05</li>
 										 
@@ -85,12 +85,12 @@
 									<h4 class="title">Email:</h4>
 									<ul>
 										<li><a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></li>
-										<li><a href="mailto:support@aurabais.com">support@aurabais.com</a></li>
+										<li><a href="mailto:support@aurabais.com">support@au-rabais.com</a></li>
 									</ul>
 								</div>
 								<div class="single-info">
 									<i class="fa fa-location-arrow"></i>
-									<h4 class="title">Our Address:</h4>
+									<h4 class="title">Notre adresse:</h4>
 									<ul>
 										<li>Afrique, Togo, Lomè-Adidogomé</li>
 									</ul>
@@ -104,9 +104,25 @@
 	<!--/ End Contact -->
 	
 	<!-- Map Section -->
-	<div class="map-section">
-		<div id="myMap"></div>
-	</div>
+	 <!-- map -->
+	 <div class="container-fluid">
+    <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+      <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+      <script>(function () {
+          var setting = { "height": 400, "width": 1920, "zoom": 17, "queryString": "Totsivi, Lomé, Togo", "place_id": "ChIJiei8z_lYIRARJzmj129sLw8", "satellite": false, "centerCoord": [6.191316416680699, 1.192086019919003], "cid": "0xf2f6c6fd7a33927", "lang": "fr", "cityUrl": "/togo/lome-16827", "cityAnchorText": "Carte de Lomé, Golfe (incl Lome), Togo", "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "822146" };
+          var d = document;
+          var s = d.createElement('script');
+          s.src = 'https://1map.com/js/script-for-user.js?embed_id=822146';
+          s.async = true;
+          s.onload = function (e) {
+            window.OneMap.initMap(setting)
+          };
+          var to = d.getElementsByTagName('script')[0];
+          to.parentNode.insertBefore(s, to);
+        })();</script><a href="https://1map.com/fr/map-embed">1 Map</a>
+    </div>
+
+  </div>
 	<!--/ End Map Section -->
 	
 	<!-- Start Shop Newsletter  -->
