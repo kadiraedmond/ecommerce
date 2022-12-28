@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\LetterController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\BlogController;
@@ -77,6 +78,7 @@ Route::get('/panier', 'FrontController@panier' );
 Route::get('/Contact', 'FrontController@contact');
 Route::get('/Blog', 'FrontController@blog');
 Route::get('/Boutique', 'FrontController@boutique');
+Route::get('blog/detail/{id}', 'FrontController@blog_detail' );
 
 
 Route::get('/info&tech', 'FrontController@info' );
@@ -92,6 +94,7 @@ Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.up
 Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 Route::get('checkout', [CartController::class, 'checkout'])->name('checkout');
+Route::get('status', [CartController::class, 'status'])->name('status');
 
 
 Route::get('/test-contact', function () {
@@ -101,3 +104,5 @@ Route::get('/test-contact', function () {
       'message' => 'Je voulais vous dire que votre site est magnifique !'
       ]);
 });
+
+Route::get('/admin', [HomeController::class, 'admin'])->name('admin');

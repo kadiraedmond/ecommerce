@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Produit;
 use App\Models\Promo;
 use App\Models\Blog;
+use App\Models\Client;
 use App\Cart;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -133,6 +134,16 @@ class FrontController extends Controller
         }
     }
 
+    public function blog_detail($id)
+    {
+        if(Blog::where('id', '$id'))
+        {
+           $similaire = Blog::latest()->get();
+           $blog = Blog::where('id', $id)->first();
+           return view('blog.detail',compact('blog','similaire'));
+        }
+    }
+
     public function type($categorie)
     {
         if(Produit::where('categorie', '$categorie'))
@@ -252,6 +263,13 @@ class FrontController extends Controller
         $beauté = DB::table('produits')->where('categorie', 'Beauté')->get();
 
         return view('produit.cosmetique',compact('homme','femme' ,'enfant', 'parfun','beauté'));
+    }
+
+     
+
+    public function  inscription()
+    {
+        return view('client.inscription');
     }
 
 

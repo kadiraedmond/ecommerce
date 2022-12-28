@@ -10,7 +10,7 @@ class CartController extends Controller
     {
         if( $cartItems = \Cart::getTotalQuantity()== 0){
 
-            return redirect()->back()->with('status','Le panier est vide');
+            return redirect()->route('status');
         }
         $cartItems = \Cart::getContent();
         // dd($cartItems);
@@ -75,5 +75,10 @@ class CartController extends Controller
     public function checkout()
     {
         return view('checkout');
+    }
+
+    public function status()
+    {
+        return view('status');
     }
 }

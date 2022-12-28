@@ -35,4 +35,9 @@ class HomeController extends Controller
         
         return view('dashboard',compact('prods','prix','categorie'));
     }
+
+    public function admin()
+    {   
+        return view('auth.admin');
+    }
 }
