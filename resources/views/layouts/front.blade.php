@@ -284,7 +284,7 @@
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="images/logo2.png" alt="#"></a>
+								<a href="{{url('/')}}"><img src="images/logo2.png" alt="#"></a>
 							</div>
 							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
 							<p class="call">Vous avez une question ? Appelez-nous 24h/24 et 7j/7<span><a href="tel:+22870651705">+228 70 65 17 05</a></span></p>
@@ -328,7 +328,7 @@
 								<ul>
 									<li>Afrique-Togo</li>
 									<li>Lomè-Adidogomé.</li>
-									<li>support@aurabais.com</li>
+									<li>support@au-rabais.com</li>
 									<li>+228 70 65 17 05</li>
 								</ul>
 							</div>

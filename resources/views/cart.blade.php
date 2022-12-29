@@ -55,7 +55,7 @@
                                     </form>
 									<!--/ End Input Order -->
 								</td>
-								<td class="total-amount" data-title="Total"><span>CFA<?php
+								<td class="total-amount" data-title="Total"><span>CFA <?php
 								$A= $item->prix;
 								$B= $item->quantity;
 								$S= $A * $B;

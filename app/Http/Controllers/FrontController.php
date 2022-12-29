@@ -128,8 +128,8 @@ class FrontController extends Controller
     {
         if(Produit::where('id', '$id'))
         {
-           $similaire = Produit::latest()->get();
            $produit = Produit::where('id', $id)->first();
+           $similaire = Produit::where('categorie', $produit->categorie)->get();
            return view('produit.detail',compact('produit','similaire'));
         }
     }

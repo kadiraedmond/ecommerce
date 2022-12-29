@@ -1753,7 +1753,7 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="section-title">
-						<h2>From Our Blog</h2>
+						<h2>Notre Blog</h2>
 					</div>
 				</div>
 			</div>
@@ -1762,7 +1762,7 @@
 				<div class="col-lg-4 col-md-6 col-12">
 					<!-- Start Single Blog  -->
 					<div class="shop-single-blog">
-						<img src="{{ asset('uploads/blog/'.$prod->picture) }}" alt="#">
+						<img src="{{ asset('uploads/blog/'.$prod->picture) }}" alt="#" style="height: 292px !important;">
 						<div class="content">
 							<p class="date">22 July , 2020. Monday</p>
 							<a href="blog/detail/{{$prod-> id}}" class="title"> {{$prod->titre}}</a>
@@ -1968,7 +1968,7 @@
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="images/logo2.png" alt="#"></a>
+								<a href="{{url('/')}}"><img src="images/logo2.png" alt="#"></a>
 							</div>
 							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
 							<p class="call">Vous avez une question ? Appelez-nous 24h/24 et 7j/7<span><a href="tel:+22870651705">+228 70 65 17 05</a></span></p>
@@ -2012,7 +2012,7 @@
 								<ul>
 									<li>Afrique-Togo</li>
 									<li>Lomè-Adidogomé.</li>
-									<li>support@aurabais.com</li>
+									<li>support@au-rabais.com</li>
 									<li>+228 70 65 17 05</li>
 								</ul>
 							</div>
