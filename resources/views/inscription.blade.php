@@ -74,7 +74,7 @@
 
                             <div class="form-outline mb-4">
                                 <input type="email" id="form2Example11" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                                placeholder="email address" />
+                                placeholder=" email address" />
                                 <label class="form-label" for="form2Example11"> </label>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -82,8 +82,7 @@
                                     </span>
                                 @enderror
                             </div>
-
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-4" style="display: none;">
                                 <input type="text" id="form2Example11" class="form-control @error('is_admin') is-invalid @enderror" name="is_admin" value="{{ old('is_admin') }}" autocomplete="name" autofocus
                                 placeholder="Type d'utilisateur" />
                                 <label class="form-label" for="form2Example11"></label>
@@ -93,6 +92,8 @@
                                     </span>
                                 @enderror
                             </div>
+
+                             
 
                             <div class="form-outline mb-4">
                                 <input type="password" id="form2Example22" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  placeholder="Password" />

@@ -40,6 +40,7 @@
 	<!-- Eshop StyleSheet -->
 	<link rel="stylesheet" href="{{ asset('front/css/reset.css') }}">
 	<link rel="stylesheet" href="{{ asset('front/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('front/faq.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
 
 	
@@ -87,7 +88,7 @@
 								  @endif
 
 								  @if (Route::has('register'))
-								    <li><i class="ti-user"></i> <a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+								    <li><i class="ti-user"></i> <a href="{{ url('/inscription') }}">{{ __('Register') }}</a></li>
 								  @endif
 
 								@else

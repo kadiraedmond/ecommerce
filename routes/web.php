@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\LetterController;
+use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\PromoController;
@@ -24,7 +25,7 @@ Route::get('/', [App\Http\Controllers\FrontController::class, 'index'])->name('w
 // });
 
 
-Route::group(['middleware' => ['auth','admin']], function () {
+Route::group(['middleware' => ['auth','verified','admin']], function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
@@ -79,6 +80,7 @@ Route::get('/Contact', 'FrontController@contact');
 Route::get('/Blog', 'FrontController@blog');
 Route::get('/Boutique', 'FrontController@boutique');
 Route::get('blog/detail/{id}', 'FrontController@blog_detail' );
+Route::get('/faq', 'FrontController@faq');
 
 
 Route::get('/info&tech', 'FrontController@info' );
@@ -86,6 +88,16 @@ Route::get('/Produit-cosmetique', 'FrontController@prod_cosmetique');
 Route::get('/Sport-Divertissement', 'FrontController@sport_div');
 Route::get('/Hygiene-Santé', 'FrontController@hygiene');
 Route::get('/Autres', 'FrontController@autres');
+
+ 
+
+Route::get('/connexion', 'InscriptionController@connexion' );
+Route::get('/inscription', 'InscriptionController@inscription');
+Route::post('/registerUsers', [InscritionController::class, 'register'])->name('registerUsers');
+Route::get('/Hygiene-Santé', 'InscriptionController@hygiene');
+Route::get('/Autres', 'InscriptionController@autres');
+
+ 
 
 
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');

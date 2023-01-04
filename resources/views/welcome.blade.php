@@ -87,7 +87,7 @@
 								  @endif
 
 								  @if (Route::has('register'))
-								    <li><i class="ti-user"></i> <a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+								    <li><i class="ti-user"></i> <a href="{{ url('/inscription') }}">{{ __('Register') }}</a></li>
 								  @endif
 
 								@else
@@ -384,7 +384,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa {{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -432,7 +432,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa{{ $prod->prix }}</span>
+															<span>CFA{{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -481,7 +481,7 @@
 													<div class="product-content">
 														<h3><a href="/detail/{{$prod-> id}}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -529,7 +529,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -577,7 +577,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa{{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -659,7 +659,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa {{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -707,7 +707,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa{{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -756,7 +756,7 @@
 													<div class="product-content">
 														<h3><a href="/detail/{{$prod-> id}}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
+															<span>FCA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -804,7 +804,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -852,7 +852,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa{{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -900,7 +900,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa {{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -980,7 +980,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>{{ $prod->prix }}</span>
+															<span> CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1028,7 +1028,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1077,7 +1077,7 @@
 													<div class="product-content">
 														<h3><a href="/detail/{{$prod-> id}}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1196,7 +1196,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span> Fcfa {{ $prod->prix }}</span>
+															<span> CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1244,7 +1244,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1293,7 +1293,7 @@
 													<div class="product-content">
 														<h3><a href="/detail/{{$prod-> id}}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa {{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1341,7 +1341,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa {{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1389,7 +1389,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa {{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1437,7 +1437,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>${{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1485,7 +1485,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa {{ $prod->prix }}</span>
+															<span>CFA {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>
@@ -1533,7 +1533,7 @@
 													<div class="product-content">
 														<h3><a href="{{ url('/detail/'.$prod->id) }}">{{ $prod->nom }}</a></h3>
 														<div class="product-price">
-															<span>Fcfa {{ $prod->prix }}</span>
+															<span>CFA  {{ $prod->prix }}</span>
 														</div>
 													</div>
 												</div>

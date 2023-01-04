@@ -272,6 +272,11 @@ class FrontController extends Controller
         return view('client.inscription');
     }
 
+    public function  faq()
+    {
+        return view('faq');
+    }
+
 
 
 
